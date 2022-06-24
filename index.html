@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <div class = "login" {text-align: center;}>
+            <h1> Prediction of Driving Range</h1>
+            <form action="{{ url_for('predict')}}"method="post"> 
+               <h2>1.Total battery capacity(kWh) (Values from 0.010000	to 279.530000	 )</h2>
+               <input type="number" step=any id="Quantity(kWh)" name="Quantity(kWh)",value="Total battery capacity(kWh)" min= 0.010000 max= 279.530000>   
+            
+               <br>
+               
+            
+               <h2>2.City</h2>
+               <input type="number" step=any id="City" name="City",value="City" min=0 max=1 >   
+            
+               <br> 
+
+            
+               <h2>3.Highway</h2>
+               <input type="number" step=any id="Highway" name="Highway",value="Highway" min=0 max=1 >   
+               
+               <br>         
+               <h2>4.Country_Roads</h2>
+               <input type="number" step=any id="Country_Roads" name="Country_Roads",value="Country_Roads" min=0 max=1 >   
+               </div> 
+               <br>
+         
+            
+               <h2>5.A/C</h2>
+               <input type="number" step=any id="A/C" name="A/C" value="A/C" min=0 max=1 >   
+               
+               <br>  
+         
+            
+               <h2>6.Park_heating</h2>
+               <input type="number" step=any id="Park_heating" name="Park_heating",value="Park_heating" min=0 max=1>   
+               </div> 
+               <br>   
+            
+               <h2>7.Tire_Type Winter tires</h2>
+               <input type="number" step=any id="Tire_Type Winter tires" name="Tire_Type Winter tires",value="Tire_Type Winter tires" min=0 max=1>   
+               
+               <br>
+         
+               <!--<h2>8.Tire_Type Summer tires</h2>
+               <input type="number" step=any id="Tire_Type Summer tires" name="Tire_Type Summer tires",value="Tire_Type Summer tires" min=0 max=1> 
+               <br>
+            
+                <h2>9.Driving_Style Normal</h2>
+               <input type="number" step=any id="Driving_Style Normal" name="Driving_Style Normal",value="Driving_Style Normal" min=0 max=1>   
+               
+               <br>   
+               -->
+               <h2>10.Driving_Style Fast</h2>
+               <input type="number" step=any id="Driving_Style Fast" name="Driving_Style Fast",value="Driving_Style Fast" min=0 max=1>   
+               
+               <br>
+         
+            
+               <h2>11.Driving_Style Moderate</h2>
+               <input type="number" step=any id="Driving_Style Moderate" name="Driving_Style Moderate",value="Driving_Style Moderate" min=0 max=1>   
+               
+               <br>
+                  <h2>12.Avg_Speed(km/h) from 2 to 100</h2>
+                  <input type="number" step=any id="Avg_Speed(km/h)" name="Avg_Speed(km/h)" value="Avg_Speed(km/h)" min=2 max=100>   
+               
+               <br>
+               <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form> 
+            <br>
+            <br>
+            {{ prediction_text }}
+      </div>  
+</body>
+</html>
